@@ -1,0 +1,15 @@
+<p>add-employee works!</p>
+
+<form (submit)="saveEmployee()">
+
+    <div class="row p-3">
+        <label for="empName">Name:</label>
+        <input id="empName" class="form-control" name="empName" [(ngModel)]="employee.empName"
+        />
+    </div>
+    <div class="row p-3">
+        <label for="address">Address:</label>
+        <input id="address" class="form-control" [name]="employee.address" [(ngModel)]="employee.address" />
+    </div>
+    <button type="submit">Save</button>
+</form>

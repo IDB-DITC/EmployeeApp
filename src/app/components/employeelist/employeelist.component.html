@@ -1,0 +1,39 @@
+<p>employeelist works!</p>
+
+
+<table class="table table-responsive table-bordered">
+    <thead>
+        <tr>
+            <th style="color:pink">ID</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(employee of employees; track employee){
+        <tr (click)="selectedEmployeeName=employee.empName">
+            <td>{{employee.empId}}</td>
+            <td >{{employee.empName}}</td>
+            <td>{{employee.address}}</td>
+        </tr>
+        }
+
+        <!--         <tr *ngFor="let employee in getEmployee()">
+                    <td>{{employee.EmpId}}</td>
+                    <td>{{employee.EmpName}}</td>
+                    <td>{{employee.Address}}</td>
+                </tr> -->
+
+    </tbody>
+
+
+    <tfoot>
+        <tr>
+            <td>
+                <span  *ngIf="selectedEmployeeName">
+                    {{selectedEmployeeName}}
+                </span>
+            </td>
+        </tr>
+    </tfoot>
+</table>

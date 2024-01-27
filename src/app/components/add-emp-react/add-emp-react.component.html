@@ -1,0 +1,28 @@
+<p>add-emp-react works!</p>
+
+
+
+<form [formGroup]="form">
+    <div class="control-group">
+        <input type="hidden"
+               formControlName="EmployeeId" />
+    </div>
+    <div class="control-group">
+        <input class="form-control"
+               formControlName="EmployeeName" />
+
+
+        <p *ngIf="empname.invalid && (empname.touched || empname.dirty)" class="alert alert-danger">
+            <span *ngIf="empname.errors?.['required'] ">Name is required.</span>
+
+            <span *ngIf="empname.errors?.['minlength']">Min length of Employee Name is 4.</span>
+            <span *ngIf="empname.errors?.['maxlength']">Max length of Employee Name is 50.</span>
+        </p>
+    </div>
+    <div class="control-group">
+        <input class="form-control"
+               formControlName="EmployeeAddress" />
+    </div>
+    <button class=" btn btn-success" type="submit" [disabled]="form.invalid">Save</button>
+</form>
+
